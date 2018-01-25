@@ -171,7 +171,6 @@ public class MainActivity extends AppCompatActivity {
         //final ImageView rightDice = (ImageView) findViewById(R.id.image_rightDice);
 
 
-        // ******************************* ARRAYS WITH DICE IMAGES ******************************
         final int[] diceArray = {
                         R.drawable.dice1,
                         R.drawable.dice2,
