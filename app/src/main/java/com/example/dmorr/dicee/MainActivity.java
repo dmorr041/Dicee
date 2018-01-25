@@ -24,14 +24,103 @@ public class MainActivity extends AppCompatActivity {
     private Spinner mDice_Type; // Spinner to select the dice type
     private Button rollButton;  // Roll button
 
+    // ******************************* ARRAYS WITH DICE IMAGES ******************************
+
+    // Images of D20 sides
+    final int[] D20_Array = {
+            R.drawable.d20side1,
+            R.drawable.d20side2,
+            R.drawable.d20side3,
+            R.drawable.d20side4,
+            R.drawable.d20side5,
+            R.drawable.d20side6,
+            R.drawable.d20side7,
+            R.drawable.d20side8,
+            R.drawable.d20side9,
+            R.drawable.d20side10,
+            R.drawable.d20side11,
+            R.drawable.d20side12,
+            R.drawable.d20side13,
+            R.drawable.d20side14,
+            R.drawable.d20side15,
+            R.drawable.d20side16,
+            R.drawable.d20side17,
+            R.drawable.d20side18,
+            R.drawable.d20side19,
+            R.drawable.d20side20
+    };
+
+    final int[] D12_Array = {
+            R.drawable.d12side1,
+            R.drawable.d12side2,
+            R.drawable.d12side3,
+            R.drawable.d12side4,
+            R.drawable.d12side5,
+            R.drawable.d12side6,
+            R.drawable.d12side7,
+            R.drawable.d12side8,
+            R.drawable.d12side9,
+            R.drawable.d12side10,
+            R.drawable.d12side11,
+            R.drawable.d12side12
+    };
+
+    final int[] D10_Array = {
+            R.drawable.d10side1,
+            R.drawable.d10side2,
+            R.drawable.d10side3,
+            R.drawable.d10side4,
+            R.drawable.d10side5,
+            R.drawable.d10side6,
+            R.drawable.d10side7,
+            R.drawable.d10side8,
+            R.drawable.d10side9,
+            R.drawable.d10side10
+    };
+
+    final int[] D8_Array = {
+            R.drawable.d8side1v2,
+            R.drawable.d8side2v2,
+            R.drawable.d8side3v2,
+            R.drawable.d8side4v2,
+            R.drawable.d8side5v2,
+            R.drawable.d8side6v2,
+            R.drawable.d8side7v2,
+            R.drawable.d8side8v2
+    };
+
+    final int[] D6_Array = {
+            R.drawable.d6side1,
+            R.drawable.d6side2,
+            R.drawable.d6side3,
+            R.drawable.d6side4,
+            R.drawable.d6side5,
+            R.drawable.d6side6
+    };
+
+    final int[] D4_Array = {
+            R.drawable.d4side1,
+            R.drawable.d4side2,
+            R.drawable.d4side3,
+            R.drawable.d4side4
+    };
+    // ******************************* ARRAYS WITH DICE IMAGES ******************************
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        // ***************************** LINKING LAYOUT ELEMENTS ********************************
+
         // Link layout elements
         rollButton = (Button) findViewById(R.id.rollButton);
         mDice_Type = (Spinner) findViewById(R.id.mDice_Type_Spinner);
+        // ***************************** LINKING LAYOUT ELEMENTS ********************************
+
+
+        // *********************************** SPINNER LOGIC ************************************
 
         // Spinner Drop down elements
         List<String> modes = new ArrayList<>();
@@ -74,12 +163,15 @@ public class MainActivity extends AppCompatActivity {
                 // Handle when user clicks nothing in s
             }
         });
+        // *********************************** SPINNER LOGIC ************************************
+
 
         // Connect Image View of Dice
         //final ImageView leftDice = (ImageView) findViewById(R.id.image_leftDice);
         //final ImageView rightDice = (ImageView) findViewById(R.id.image_rightDice);
 
 
+        // ******************************* ARRAYS WITH DICE IMAGES ******************************
         final int[] diceArray = {
                         R.drawable.dice1,
                         R.drawable.dice2,
@@ -89,83 +181,10 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.dice6
         };
 
-        // Images of D20 sides
-        final int[] D20_Array = {
-                R.drawable.D20_1,
-                R.drawable.D20_3,
-                R.drawable.D20_4,
-                R.drawable.D20_5,
-                R.drawable.D20_6,
-                R.drawable.D20_7,
-                R.drawable.D20_8,
-                R.drawable.D20_9,
-                R.drawable.D20_10,
-                R.drawable.D20_11,
-                R.drawable.D20_12,
-                R.drawable.D20_13,
-                R.drawable.D20_14,
-                R.drawable.D20_15,
-                R.drawable.D20_16,
-                R.drawable.D20_17,
-                R.drawable.D20_18,
-                R.drawable.D20_19,
-                R.drawable.D20_20,
-        };
 
-        final int[] D12_Array = {
-                R.drawable.D12_1,
-                R.drawable.D12_2,
-                R.drawable.D12_3,
-                R.drawable.D12_4,
-                R.drawable.D12_5,
-                R.drawable.D12_6,
-                R.drawable.D12_7,
-                R.drawable.D12_8,
-                R.drawable.D12_9,
-                R.drawable.D12_10,
-                R.drawable.D12_11,
-                R.drawable.D12_12
-        };
 
-        final int[] D10_Array = {
-                R.drawable.D10_1,
-                R.drawable.D10_2,
-                R.drawable.D10_3,
-                R.drawable.D10_4,
-                R.drawable.D10_5,
-                R.drawable.D10_6,
-                R.drawable.D10_7,
-                R.drawable.D10_8,
-                R.drawable.D10_9,
-                R.drawable.D10_10
-        };
 
-        final int[] D8_Array = {
-                R.drawable.D8_1,
-                R.drawable.D8_2,
-                R.drawable.D8_3,
-                R.drawable.D8_4,
-                R.drawable.D8_5,
-                R.drawable.D8_6,
-                R.drawable.D8_7,
-                R.drawable.D8_8
-        };
-
-        final int[] D6_Array = {
-                R.drawable.D6_1,
-                R.drawable.D6_2,
-                R.drawable.D6_3,
-                R.drawable.D6_4,
-                R.drawable.D6_5,
-                R.drawable.D6_6
-        };
-
-        final int[] D4_Array = {
-                R.drawable.D4_1,
-                R.drawable.D4_2,
-                R.drawable.D4_3,
-                R.drawable.D4_4
-        };
+        // ******************************* ROLL BUTTON LOGIC ************************************
 
         // When a user clicks the Roll button
         rollButton.setOnClickListener(new View.OnClickListener() {
@@ -196,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        // ******************************* ROLL BUTTON LOGIC ************************************
     }
 
     /**
