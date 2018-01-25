@@ -24,103 +24,93 @@ public class MainActivity extends AppCompatActivity {
     private Spinner mDice_Type; // Spinner to select the dice type
     private Button rollButton;  // Roll button
 
-    // ******************************* ARRAYS WITH DICE IMAGES ******************************
 
     // Images of D20 sides
     final int[] D20_Array = {
-            R.drawable.d20side1,
-            R.drawable.d20side2,
-            R.drawable.d20side3,
-            R.drawable.d20side4,
-            R.drawable.d20side5,
-            R.drawable.d20side6,
-            R.drawable.d20side7,
-            R.drawable.d20side8,
-            R.drawable.d20side9,
-            R.drawable.d20side10,
-            R.drawable.d20side11,
-            R.drawable.d20side12,
-            R.drawable.d20side13,
-            R.drawable.d20side14,
-            R.drawable.d20side15,
-            R.drawable.d20side16,
-            R.drawable.d20side17,
-            R.drawable.d20side18,
-            R.drawable.d20side19,
-            R.drawable.d20side20
+            R.drawable.D20_1_hdpi,
+            R.drawable.D20_3_hdpi,
+            R.drawable.D20_4_hdpi,
+            R.drawable.D20_5_hdpi,
+            R.drawable.D20_6_hdpi,
+            R.drawable.D20_7_hdpi,
+            R.drawable.D20_8_hdpi,
+            R.drawable.D20_9_hdpi,
+            R.drawable.D20_10_hdpi,
+            R.drawable.D20_11_hdpi,
+            R.drawable.D20_12_hdpi,
+            R.drawable.D20_13_hdpi,
+            R.drawable.D20_14_hdpi,
+            R.drawable.D20_15_hdpi,
+            R.drawable.D20_16_hdpi,
+            R.drawable.D20_17_hdpi,
+            R.drawable.D20_18_hdpi,
+            R.drawable.D20_19_hdpi,
+            R.drawable.D20_20_hdpi,
     };
 
     final int[] D12_Array = {
-            R.drawable.d12side1,
-            R.drawable.d12side2,
-            R.drawable.d12side3,
-            R.drawable.d12side4,
-            R.drawable.d12side5,
-            R.drawable.d12side6,
-            R.drawable.d12side7,
-            R.drawable.d12side8,
-            R.drawable.d12side9,
-            R.drawable.d12side10,
-            R.drawable.d12side11,
-            R.drawable.d12side12
+            R.drawable.D12_1_hdpi,
+            R.drawable.D12_2_hdpi,
+            R.drawable.D12_3_hdpi,
+            R.drawable.D12_4_hdpi,
+            R.drawable.D12_5_hdpi,
+            R.drawable.D12_6_hdpi,
+            R.drawable.D12_7_hdpi,
+            R.drawable.D12_8_hdpi,
+            R.drawable.D12_9_hdpi,
+            R.drawable.D12_10_hdpi,
+            R.drawable.D12_11_hdpi,
+            R.drawable.D12_12_hdpi
     };
 
     final int[] D10_Array = {
-            R.drawable.d10side1,
-            R.drawable.d10side2,
-            R.drawable.d10side3,
-            R.drawable.d10side4,
-            R.drawable.d10side5,
-            R.drawable.d10side6,
-            R.drawable.d10side7,
-            R.drawable.d10side8,
-            R.drawable.d10side9,
-            R.drawable.d10side10
+            R.drawable.D10_1_hdpi,
+            R.drawable.D10_2_hdpi,
+            R.drawable.D10_3_hdpi,
+            R.drawable.D10_4_hdpi,
+            R.drawable.D10_5_hdpi,
+            R.drawable.D10_6_hdpi,
+            R.drawable.D10_7_hdpi,
+            R.drawable.D10_8_hdpi,
+            R.drawable.D10_9_hdpi,
+            R.drawable.D10_10_hdpi
     };
 
     final int[] D8_Array = {
-            R.drawable.d8side1v2,
-            R.drawable.d8side2v2,
-            R.drawable.d8side3v2,
-            R.drawable.d8side4v2,
-            R.drawable.d8side5v2,
-            R.drawable.d8side6v2,
-            R.drawable.d8side7v2,
-            R.drawable.d8side8v2
+            R.drawable.D8_1_hdpi,
+            R.drawable.D8_2_hdpi,
+            R.drawable.D8_3_hdpi,
+            R.drawable.D8_4_hdpi,
+            R.drawable.D8_5_hdpi,
+            R.drawable.D8_6_hdpi,
+            R.drawable.D8_7_hdpi,
+            R.drawable.D8_8_hdpi
     };
 
     final int[] D6_Array = {
-            R.drawable.d6side1,
-            R.drawable.d6side2,
-            R.drawable.d6side3,
-            R.drawable.d6side4,
-            R.drawable.d6side5,
-            R.drawable.d6side6
+            R.drawable.dice1,
+            R.drawable.D6_2_hdpi,
+            R.drawable.D6_3_hdpi,
+            R.drawable.D6_4_hdpi,
+            R.drawable.D6_5_hdpi,
+            R.drawable.D6_6_hdpi
     };
 
     final int[] D4_Array = {
-            R.drawable.d4side1,
-            R.drawable.d4side2,
-            R.drawable.d4side3,
-            R.drawable.d4side4
+            R.drawable.D4_1_hdpi,
+            R.drawable.D4_2_hdpi,
+            R.drawable.D4_3_hdpi,
+            R.drawable.D4_4_hdpi
     };
-    // ******************************* ARRAYS WITH DICE IMAGES ******************************
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        // ***************************** LINKING LAYOUT ELEMENTS ********************************
-
         // Link layout elements
         rollButton = (Button) findViewById(R.id.rollButton);
         mDice_Type = (Spinner) findViewById(R.id.mDice_Type_Spinner);
-        // ***************************** LINKING LAYOUT ELEMENTS ********************************
-
-
-        // *********************************** SPINNER LOGIC ************************************
 
         // Spinner Drop down elements
         List<String> modes = new ArrayList<>();
@@ -149,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 Object item = parent.getItemAtPosition(position);
                 if (item != null) {
                     // Handle when user clicks something in spinner
-
+                    mDice_type = item.toString();
 
                     Toast.makeText(MainActivity.this, item.toString(),
                             Toast.LENGTH_SHORT).show();
@@ -163,8 +153,6 @@ public class MainActivity extends AppCompatActivity {
                 // Handle when user clicks nothing in s
             }
         });
-        // *********************************** SPINNER LOGIC ************************************
-
 
         // Connect Image View of Dice
         //final ImageView leftDice = (ImageView) findViewById(R.id.image_leftDice);
@@ -179,42 +167,36 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.dice5,
                         R.drawable.dice6
         };
-
-
-
-
-        // ******************************* ROLL BUTTON LOGIC ************************************
-
+        
         // When a user clicks the Roll button
         rollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(mDice_type == D20){
+                if(mDice_type.equals("D20")){
                     generate_DiceFace(20);
                 }
-                else if(mDice_type == D12){
+                else if(mDice_type.equals("D12")){
                     generate_DiceFace(12);
                 }
-                else if(mDice_type == D10){
+                else if(mDice_type.equals("D10")){
                     generate_DiceFace(10);
                 }
-                else if(mDice_type == D10percent){
+                else if(mDice_type.equals("D10+")){
                     generate_DiceFace(10);
                     generate_DiceFace(10);
                 }
-                else if(mDice_type == D8){
+                else if(mDice_type.equals("D8")){
                     generate_DiceFace(8);
                 }
-                else if(mDice_type == D6){
+                else if(mDice_type.equals("D6")){
                     generate_DiceFace(6);
                 }
-                else if(mDice_type == D4){
+                else if(mDice_type.equals("D4")){
                     generate_DiceFace(4);
                 }
             }
         });
-        // ******************************* ROLL BUTTON LOGIC ************************************
     }
 
     /**
@@ -228,26 +210,26 @@ public class MainActivity extends AppCompatActivity {
         int number = randomNumberGenerator.nextInt(limit);
 
         // Set the dice ImageView faces accordingly
-        if(mDice_type == D20){
+        if(mDice_type.equals("D20")){
             dice.setImageResource(D20_Array[number]);
         }
-        else if(mDice_type == D12){
+        else if(mDice_type.equals("D12")){
             dice.setImageResource(D12_Array[number]);
         }
-        else if(mDice_type == D10){
+        else if(mDice_type.equals("D10")){
             dice.setImageResource(D10_Array[number]);
         }
-        else if(mDice_type == D10percent){
+        else if(mDice_type.equals("D10+")){
             dice.setImageResource(D10_Array[number]);
             dice2.setImageResource(D10_Array[number]);
         }
-        else if(mDice_type == D8){
+        else if(mDice_type.equals("D8")){
             dice.setImageResource(D8_Array[number]);
         }
-        else if(mDice_type == D6){
+        else if(mDice_type.equals("D6")){
             dice.setImageResource(D6_Array[number]);
         }
-        else if(mDice_type == D4){
+        else if(mDice_type.equals("D4")){
             dice.setImageResource(D4_Array[number]);
         }
     }
