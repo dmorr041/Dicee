@@ -25,82 +25,82 @@ public class MainActivity extends AppCompatActivity {
     private Button rollButton;  // Roll button
 
 
-    // Images of D20 sides
     final int[] D20_Array = {
-            R.drawable.D20_1_hdpi,
-            R.drawable.D20_3_hdpi,
-            R.drawable.D20_4_hdpi,
-            R.drawable.D20_5_hdpi,
-            R.drawable.D20_6_hdpi,
-            R.drawable.D20_7_hdpi,
-            R.drawable.D20_8_hdpi,
-            R.drawable.D20_9_hdpi,
-            R.drawable.D20_10_hdpi,
-            R.drawable.D20_11_hdpi,
-            R.drawable.D20_12_hdpi,
-            R.drawable.D20_13_hdpi,
-            R.drawable.D20_14_hdpi,
-            R.drawable.D20_15_hdpi,
-            R.drawable.D20_16_hdpi,
-            R.drawable.D20_17_hdpi,
-            R.drawable.D20_18_hdpi,
-            R.drawable.D20_19_hdpi,
-            R.drawable.D20_20_hdpi,
+            R.drawable.d20side1,
+            R.drawable.d20side2,
+            R.drawable.d20side3,
+            R.drawable.d20side4,
+            R.drawable.d20side5,
+            R.drawable.d20side6,
+            R.drawable.d20side7,
+            R.drawable.d20side8,
+            R.drawable.d20side9,
+            R.drawable.d20side10,
+            R.drawable.d20side11,
+            R.drawable.d20side12,
+            R.drawable.d20side13,
+            R.drawable.d20side14,
+            R.drawable.d20side15,
+            R.drawable.d20side16,
+            R.drawable.d20side17,
+            R.drawable.d20side18,
+            R.drawable.d20side19,
+            R.drawable.d20side20
     };
 
     final int[] D12_Array = {
-            R.drawable.D12_1_hdpi,
-            R.drawable.D12_2_hdpi,
-            R.drawable.D12_3_hdpi,
-            R.drawable.D12_4_hdpi,
-            R.drawable.D12_5_hdpi,
-            R.drawable.D12_6_hdpi,
-            R.drawable.D12_7_hdpi,
-            R.drawable.D12_8_hdpi,
-            R.drawable.D12_9_hdpi,
-            R.drawable.D12_10_hdpi,
-            R.drawable.D12_11_hdpi,
-            R.drawable.D12_12_hdpi
+            R.drawable.d12side1,
+            R.drawable.d12side2,
+            R.drawable.d12side3,
+            R.drawable.d12side4,
+            R.drawable.d12side5,
+            R.drawable.d12side6,
+            R.drawable.d12side7,
+            R.drawable.d12side8,
+            R.drawable.d12side9,
+            R.drawable.d12side10,
+            R.drawable.d12side11,
+            R.drawable.d12side12
     };
 
     final int[] D10_Array = {
-            R.drawable.D10_1_hdpi,
-            R.drawable.D10_2_hdpi,
-            R.drawable.D10_3_hdpi,
-            R.drawable.D10_4_hdpi,
-            R.drawable.D10_5_hdpi,
-            R.drawable.D10_6_hdpi,
-            R.drawable.D10_7_hdpi,
-            R.drawable.D10_8_hdpi,
-            R.drawable.D10_9_hdpi,
-            R.drawable.D10_10_hdpi
+            R.drawable.d10side1,
+            R.drawable.d10side2,
+            R.drawable.d10side3,
+            R.drawable.d10side4,
+            R.drawable.d10side5,
+            R.drawable.d10side6,
+            R.drawable.d10side7,
+            R.drawable.d10side8,
+            R.drawable.d10side9,
+            R.drawable.d10side10
     };
 
     final int[] D8_Array = {
-            R.drawable.D8_1_hdpi,
-            R.drawable.D8_2_hdpi,
-            R.drawable.D8_3_hdpi,
-            R.drawable.D8_4_hdpi,
-            R.drawable.D8_5_hdpi,
-            R.drawable.D8_6_hdpi,
-            R.drawable.D8_7_hdpi,
-            R.drawable.D8_8_hdpi
+            R.drawable.d8side1v2,
+            R.drawable.d8side2v2,
+            R.drawable.d8side3v2,
+            R.drawable.d8side4v2,
+            R.drawable.d8side5v2,
+            R.drawable.d8side6v2,
+            R.drawable.d8side7v2,
+            R.drawable.d8side8v2
     };
 
     final int[] D6_Array = {
-            R.drawable.dice1,
-            R.drawable.D6_2_hdpi,
-            R.drawable.D6_3_hdpi,
-            R.drawable.D6_4_hdpi,
-            R.drawable.D6_5_hdpi,
-            R.drawable.D6_6_hdpi
+            R.drawable.d6side1,
+            R.drawable.d6side2,
+            R.drawable.d6side3,
+            R.drawable.d6side4,
+            R.drawable.d6side5,
+            R.drawable.d6side6
     };
 
     final int[] D4_Array = {
-            R.drawable.D4_1_hdpi,
-            R.drawable.D4_2_hdpi,
-            R.drawable.D4_3_hdpi,
-            R.drawable.D4_4_hdpi
+            R.drawable.d4side1,
+            R.drawable.d4side2,
+            R.drawable.d4side3,
+            R.drawable.d4side4
     };
 
     @Override
@@ -111,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
         // Link layout elements
         rollButton = (Button) findViewById(R.id.rollButton);
         mDice_Type = (Spinner) findViewById(R.id.mDice_Type_Spinner);
+
+        // ************************* SPINNER LOGIC ************************************************
 
         // Spinner Drop down elements
         List<String> modes = new ArrayList<>();
@@ -153,21 +155,25 @@ public class MainActivity extends AppCompatActivity {
                 // Handle when user clicks nothing in s
             }
         });
+        // ************************* SPINNER LOGIC END *********************************************
 
         // Connect Image View of Dice
         //final ImageView leftDice = (ImageView) findViewById(R.id.image_leftDice);
         //final ImageView rightDice = (ImageView) findViewById(R.id.image_rightDice);
 
 
-        final int[] diceArray = {
-                        R.drawable.dice1,
-                        R.drawable.dice2,
-                        R.drawable.dice3,
-                        R.drawable.dice4,
-                        R.drawable.dice5,
-                        R.drawable.dice6
-        };
-        
+//        final int[] diceArray = {
+//                        R.drawable.dice1,
+//                        R.drawable.dice2,
+//                        R.drawable.dice3,
+//                        R.drawable.dice4,
+//                        R.drawable.dice5,
+//                        R.drawable.dice6
+//        };
+
+
+        // ********************************* ROLL BUTTON LOGIC ************************************
+
         // When a user clicks the Roll button
         rollButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -197,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        // ********************************* ROLL BUTTON LOGIC END *********************************
     }
 
     /**
